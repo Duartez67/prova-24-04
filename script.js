@@ -1,11 +1,22 @@
 class personagem {
-constructor (mana, vida, forca) {
+    #vida
+    constructor (mana, vida, forca) {
     this.mana = mana,
-    this.força = forca,
-    this.vida = vida 
+    this.forca = forca,
+    this.#vida = vida 
+}
+getVida(){
+    return this.#vida
+}
+setVida(novavida){
+    this.#vida = novavida;
 }
 Atacar(){
     console.log("Ataque")
+    const dano = this.forca;
+    const vidaatual = onpointerenter.getVida();
+    onpointerenter.setVida(vidaatual - dano);
+        console.log(`${this.constructor.name}atacou causando ${dano}de dano. vida do oponente agora é ${onpointerenter.getVida()}.`);
 }
 defender(){
     console.log("Defesa")
